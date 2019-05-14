@@ -1,0 +1,23 @@
+version: "2"
+
+services:
+  db:
+    image: mysql:5.7
+    container_name: dbi #harus sama dengan nama host yang ada dicodingan apps
+    restart: always
+    ports: 
+      - "70:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=crud_db
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=root
+    # volumes:
+    #   - /opt/data:/var/lib/mysql
+
+  crud-express:
+    build: .
+    depends_on:
+      - db
+    ports:
+      - "30:8000"
