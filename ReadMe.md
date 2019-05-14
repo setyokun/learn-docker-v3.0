@@ -1,0 +1,5 @@
+- buat dockerfile 
+- buat docker-compose.yaml 
+- jangan lupa nama host harus sama dengan nama container yang ada di docker-compose 
+- setelah build docker-compose up
+- jangan lupa buat tabel dulu sebelum cek di localhost, karena tabel belum tedifine 
